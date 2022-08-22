@@ -1,9 +1,15 @@
 <h2><strong>Books</strong></h2>
-<h4>Title</h4>
 
+<h4>Title</h4>
+<h4>Body</h4>
+<% @books.each do |book| %>
 <%= book.title %>
 <%= book.body %>
-<h4>Body</h4>
+<%= link_to "show", book_path(book) %>
+<%= link_to "edit", edit_book_path(book) %>
+
+<% end %>
+
 
 <%= render 'books/new', book: @book %>
 
